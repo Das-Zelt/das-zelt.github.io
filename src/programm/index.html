@@ -1,18 +1,18 @@
 ---
-layout: blog
+layout: programm-list
 ---
 
 <section class="mt-15">
-    {% set programlist = collections.programm %}
+    {% set eventlist = collections.events %}
 
-    {% for event in programlist | reverse %}
+    {% for event in eventlist | reverse %}
         <article class="my-8">
             <h2 class="font-bold text-3xl text-gray-900 mb-2">
                 <a href="{{ event.url | url }}">
                     {% if event.data.title %}
                         {{ event.data.title }}
                     {% else %}
-                        Untitled
+                    Kein Titel
                     {% endif %}
                 </a>
             </h2>

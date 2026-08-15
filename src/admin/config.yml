@@ -9,7 +9,8 @@ local_backend: true
 # publish_mode: editorial_workflow
 collections:
   - label: "Programm"
-    name: "events"
+    label_singular: "Programmpunkt"
+    name: "programm"
     folder: "src/programm"
     create: true
     fields:
@@ -18,6 +19,7 @@ collections:
       - { label: "Ende", name: "end", widget: "datetime" }
       - { label: "Beschreibung", name: "body", widget: "markdown" }
   - label: "Neuigkeiten"
+    label_singular: "Neuigkeit"
     name: "blog"
     folder: "src/posts"
     create: true
@@ -36,6 +38,7 @@ collections:
         create: true
         options: ["Tags", "created", "from", "config.yml"]
   - label: "Einstellungen"
+    label_singular: "Einstellung"
     name: "settings"
     editor:
       preview: false

@@ -1,3 +1,6 @@
 {
-    "layout": "programm"
+    "layout": "programm",
+    "tags": [
+        "events"
+    ]
 }

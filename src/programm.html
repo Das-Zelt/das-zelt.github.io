@@ -6,7 +6,7 @@ layout: programm-list
     {% set eventlist = collections.events %}
 
     {% for event in eventlist | reverse %}
-        <article class="my-8">
+        <div class="my-8">
             <h2 class="font-bold text-3xl text-gray-900 mb-2">
                 <a href="{{ event.url | url }}">
                     {% if event.data.title %}
@@ -18,7 +18,7 @@ layout: programm-list
             </h2>
             <p class="text-base leading-6 text-gray-500 mb-3">
                 <time>
-                    {{ event.start | readableDate }}
+                    {{ event.data.start | readableDate }}
                 </time>
             </p>
             {% if event.data.description %}
@@ -33,6 +33,6 @@ layout: programm-list
                 </a>
             </p>
 
-        </article>
+        </div>
     {% endfor %}
 </section>

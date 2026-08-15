@@ -8,6 +8,15 @@ public_folder: "/static/img"
 local_backend: true
 # publish_mode: editorial_workflow
 collections:
+  - label: "Programm"
+    name: "events"
+    folder: "src/programm"
+    create: true
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Start", name: "start", widget: "datetime" }
+      - { label: "Ende", name: "end", widget: "datetime" }
+      - { label: "Beschreibung", name: "description", widget: "markdown" }
   - label: "Neuigkeiten"
     name: "blog"
     folder: "src/posts"

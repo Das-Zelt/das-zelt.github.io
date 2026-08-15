@@ -10,7 +10,7 @@ local_backend: true
 collections:
   - label: "Programm"
     label_singular: "Programmpunkt"
-    name: "programm"
+    name: "events"
     folder: "src/programm"
     create: true
     fields:

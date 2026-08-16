@@ -21,12 +21,12 @@
             src="/static/js/umami-script.js"
             data-website-id="0cfda895-dc93-4096-b78a-64b1da4769ad"
         ></script>
+
+        <script src="/static/js/alpine.js"></script>
     </head>
     <body>
         {% include "./partials/navbar.html" %} {{ content | safe }} {% include
         "./partials/footer.html" %}
-
-        <script src="/static/js/alpine.js"></script>
 
         {% if path == "home" %}
         <!-- Netlify Identity Widget -->

@@ -1,6 +1,10 @@
 backend:
-  name: github
-  repo: Das-Zelt/das-zelt.github.io
+  name: gitea
+  repo: Das-Zelt/website
+  app_id: c5fb9107-1e39-4bd1-b3ff-9bbb4173bbfb
+  api_root: https://gitea.com/api/v1
+  base_url: https://gitea.com
+  auth_endpoint: https://gitea.com/login/oauth/authorize
 media_folder: "src/static/img"
 public_folder: "/static/img"
 

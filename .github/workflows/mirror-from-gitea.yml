@@ -1,0 +1,36 @@
+name: Mirror from Gitea
+
+on:
+  repository_dispatch:
+    types:
+      - gitea-push
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure SSH
+        env:
+          GITEA_SSH_KEY: ${{ secrets.GITEA_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$GITEA_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          ssh-keyscan gitea.com >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Clone Gitea repository
+        run: |
+          git clone --mirror git@gitea.com:Das-Zelt/website.git mirror.git
+
+      - name: Push mirror to GitHub
+        working-directory: mirror.git
+        run: |
+          git push --mirror "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"

@@ -20,13 +20,13 @@ Detailed instructions are available in my blog. [Check it out](https://blog.surj
 ### 1\. Clone this Repository
 
 ```
-git clone https://github.com/surjithctly/neat-starter.git
+git clone https://gitea.com/Das-Zelt/website.git
 ```
 
 ### 2\. Navigate to the directory
 
 ```
-cd neat-starter
+cd website
 ```
 
 ### 3\. Install dependencies
